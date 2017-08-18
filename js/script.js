@@ -53,20 +53,34 @@ data.map(function (player) {
 // Uzyj do tego liczby meczy ktore grali ("GP") i sredniej ilosci minut w kazdym meczu ("MIN")
 // pokaz ich imiona i nazwiska i sumaryczna ilosci minut: ["Andrew Wiggins, 3050.4", "Karl-Anthony Towns, 3034"...]
 
-function gameSum(player) {
-    return player.GP * player.MIN;
+// function playerMin(player) {
+//     return {
+//         name: player.PLAYER,
+//         totalMin: player.GP * player.MIN
+//     };
+// }
+
+function playerMin(player) {
+    return {
+        name: player.PLAYER,
+        totalMin: player.GP * player.MIN
+    };
 }
 
-data.sort(function (player1, player2) {
-    return (player2.GP * player2.MIN) - (player1.GP * player1.MIN);
-});
+function minTotal(player1, player2) {
+    return player2.totalMin - player1.totalMin;
+}
+data.map(playerMin).sort(minTotal);
 
-data.map(gameSum);
 
 // zadanie 5
-// Pokaz imiona i nazwiska wszystkich koszykarzy z druzyn ("TEAM") ktore zaczynaja sie na "C". 
+// Pokaz imiona i nazwiska wszystkich koszykarzy z druzyn ("TEAM") ktore zaczynaja sie na "C".
 
+function teamC(player) {
+    return player.TEAM[0] === "C";
+    }
 
+data.filter(teamC).map(getPlayerName);
 
 // zadanie 6
 // pokaz wszystkich graczy z druzyny ("TEAM") Chicago BUlls (skrot "CHI"). Posortuj ich po ilosci asyst ("AST") ktore zdobyli.
