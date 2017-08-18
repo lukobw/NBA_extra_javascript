@@ -1,0 +1,22 @@
+{
+  "name": "nba-players",
+  "version": "1.0.0",
+  "description": "Javascript exercises",
+  "scripts": {
+    "start": "browser-sync start --server './' --files '**/*'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apieceofbart/nba-players.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apieceofbart/nba-players/issues"
+  },
+  "homepage": "https://github.com/apieceofbart/nba-players#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13"
+  }
+}
